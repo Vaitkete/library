@@ -56,7 +56,7 @@ def edit_rating():
     return render_template("edit.html", book=book_to_update)
 
 
-@app.route('/delete')
+@app.route('/delete', methods=["DELETE"])
 def delete():
     book_id = request.args.get("id")
     book_to_delete = Book.query.get(book_id)
